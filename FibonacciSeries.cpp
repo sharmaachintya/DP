@@ -16,7 +16,7 @@ int fib(int n, vector<int> &dp)            // Using TOP DOWN approach   (RECURSI
     return dp[n];
 }
 
-int fib2(int n, vector<int> &dp)
+int fib2(int n, vector<int> &dp)          // Using BOTTOM UP approach    (TABULATION)
 {
     dp[1] = 1;
     dp[0] = 0;

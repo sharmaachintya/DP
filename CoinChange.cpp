@@ -38,7 +38,6 @@ int solveTab(vector<int> &coins, int amnt)                                     /
     vector<int> dp(amnt+1 , INT_MAX);
     dp[0] = 0;
 
-    int mini = INT_MAX;
     for (int i=1;i<=amnt;i++)
     {
         for (int j=0;j<coins.size();j++)

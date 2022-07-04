@@ -26,7 +26,7 @@ int solveMem(int n, int k, vector<int> &dp)        // TOP DOWN APPROACH
     return dp[n];
 }
 
-int solveTab(int n, int k)
+int solveTab(int n, int k)                  // BOTTOM UP APPROACH
 {
     vector<int> dp(n+1, 0);
 

@@ -36,7 +36,7 @@ int solveTab(int n, int k)
 
     for (int i=3;i<=n;i++)
     {
-        dp[i] = add(mul(solveMem(n-2, k, dp), k-1), mul(solveMem(n-1, k, dp), k-1));
+        dp[i] = add(mul(dp[i-2], k-1), mul(dp[i-1], k-1));
     }
     return dp[n];
 }

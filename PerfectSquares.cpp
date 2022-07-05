@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int solveMem(int n, vector<int> &dp)
+int solveMem(int n, vector<int> &dp)                        // TOP DOWN APPROACH
 {
     // Base Case
     if (n == 0)
@@ -25,7 +25,7 @@ int solveMem(int n, vector<int> &dp)
     return dp[n];
 }
 
-int solveTab(int n)
+int solveTab(int n)                                          // BOTTOM UP APPROACH
 {
     vector<int> dp(n+1, INT_MAX);
     // Base Case

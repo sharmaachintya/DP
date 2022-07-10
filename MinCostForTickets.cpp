@@ -31,7 +31,7 @@ int solveMem(int n, vector<int> &days, vector<int> &costs, int index, vector<int
     return dp[index];
 }
 
-int solveTab(int n, vector<int> &days, vector<int> &costs)
+int solveTab(int n, vector<int> &days, vector<int> &costs)                          // BOTTOM UP APPROACH
 {
     vector<int> dp(n+1, INT_MAX);
     // Base Case

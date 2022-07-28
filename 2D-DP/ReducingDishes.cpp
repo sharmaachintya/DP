@@ -21,8 +21,17 @@ int solveTab(vector<int> arr)                                                   
 {
     int n = arr.size();
     vector<vector<int>> dp(n+1, vector<int> (n+1, 0));
-    
 
+    for (int index=n-1;index>=0;index--)
+    {
+        for (int time=index;time>=0;time--)
+        {
+            int include = arr[index] * (time + 1) + dp[index + 1][time + 1];
+            int exclude = 0 + dp[index + 1][time];
+            dp[index][time] = max(include, exclude);
+        }
+    }
+    return dp[0][0];
 }
 
 int main()
@@ -31,5 +40,5 @@ int main()
     int n = satisfaction.size();
     vector<vector<int>> dp(n+1, vector<int> (n+1, -1));
     cout<<solveMem(satisfaction, 0, 0, dp)<<endl;
-    //cout<<solveTab(satisfaction);
+    cout<<solveTab(satisfaction);
 }

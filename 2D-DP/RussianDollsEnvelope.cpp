@@ -10,7 +10,7 @@ bool comp(vector<int> &a, vector<int> &b)
         return a[0] < b[0];
 }
 
-int solveOptimal(vector<vector<int>> arr)
+int solveOptimal(vector<vector<int>> arr)                                 // BINARY SEARCH DP
 {
     int n = arr.size();
     sort(arr.begin(), arr.end(), comp);

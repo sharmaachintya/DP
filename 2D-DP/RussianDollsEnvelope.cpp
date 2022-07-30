@@ -16,7 +16,7 @@ int solveOptimal(vector<vector<int>> arr)
     sort(arr.begin(), arr.end(), comp);
     vector<int> ans;
 
-    ans.push_back(arr[0][0]);
+    ans.push_back(arr[0][1]);
 
     for (int i=1;i<n;i++)
     {

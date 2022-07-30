@@ -28,7 +28,7 @@ int solveMem(vector<int> &arr, int curr, int prev, vector<vector<int>> &dp)     
 
 }
 
-int solveTab(vector<int> arr)
+int solveTab(vector<int> arr)                                                   // BOTTOM UP APPROACH
 {
     int n = arr.size();
     vector<vector<int>> dp(n+1, vector<int> (n + 1, 0));
@@ -49,11 +49,36 @@ int solveTab(vector<int> arr)
     return dp[0][0];
 }
 
+int solveOptimal(vector<int> nums)                                           // BINARY SEARCH DP
+{
+    int n = nums.size();
+    if (n == 0)
+        return 0;
+
+    vector<int> ans;
+    ans.push_back(nums[0]);
+
+    for (int i=1;i<n;i++)
+    {
+        if (nums[i] > ans.back())
+        {
+            ans.push_back(nums[i]);
+        }
+        else
+        {
+            int index = lower_bound(ans.begin(), ans.end(), nums[i]) - ans.begin();
+            ans[index] = nums[i];
+        }
+    }
+    return ans.size();
+}
+
 int main()
 {
     vector<int> arr = {10, 9, 2, 5, 3, 7, 101, 18};  
     int n = arr.size();
     vector<vector<int>> dp(n, vector<int> (n+1, -1));
     cout<<solveMem(arr, 0, -1, dp)<<endl;
-    cout<<solveTab(arr);
+    cout<<solveTab(arr)<<endl;
+    cout<<solveOptimal(arr);
 }

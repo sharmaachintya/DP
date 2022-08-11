@@ -39,7 +39,7 @@ int solveTab(vector<int> &slices)                                               
     int case1 = dp1[0][k/3];
 
     vector<vector<int>> dp2(k+2, vector<int> (k+2, 0));
-    for (int index = k-1;index>=0;index--)
+    for (int index = k-1;index>=1;index--)
     {
         for (int n=1;n<=k/3;n++)
         {

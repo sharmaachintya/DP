@@ -57,6 +57,35 @@ int solveTab(int n, vector<vector<int>> &points)                                
     return dp[n - 1][3];
 }
 
+int optiSoln(int n, vector<vector<int>> &points)                        // Space optimized Solution
+{
+    vector<int> prev(4, 0);
+    prev[0] = max(points[0][1], points[0][2]);
+    prev[1] = max(points[0][0], points[0][2]);
+    prev[2] = max(points[0][0], points[0][1]);
+    prev[3] = max(points[0][0], max(points[0][1], points[0][2]));
+
+    for (int day=1;day<=n-1;day++)
+    {
+        vector<int> temp(4, 0);
+        for (int last=0;last<4;last++)
+        {
+            int maxi = 0;
+            for (int i=0;i<=2;i++)
+            {
+                if (i != last)
+                {
+                    int point = points[day][i] + prev[i];
+                    maxi = max(maxi, point);
+                }
+            }
+            temp[last] = maxi;
+        }
+        prev = temp;
+    }
+    return prev[3];
+}
+
 int main()
 {
     vector<vector<int>> points = {{10, 40 ,70},
@@ -66,5 +95,6 @@ int main()
     int n = 3;
     vector<vector<int>> dp(n, vector<int>(4, -1));
     cout<<solveMem(n - 1, 3, points, dp)<<endl;
-    cout<<solveTab(n, points);
+    cout<<solveTab(n, points)<<endl;
+    cout<<optiSoln(n, points);
 }

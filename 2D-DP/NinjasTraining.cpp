@@ -42,7 +42,7 @@ int solveTab(int n, vector<vector<int>> &points)                                
     {
         for (int last=0;last<4;last++)
         {
-            int maxi = 0;
+            int maxi = 0; 
             for (int i=0;i<=2;i++)
             {
                 if (i != last)

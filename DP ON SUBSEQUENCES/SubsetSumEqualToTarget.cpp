@@ -23,7 +23,7 @@ bool solveMem(int ind, int target, vector<int> &arr, vector<vector<int>> &dp)   
 bool solveTab(int k, vector<int> &arr)                  // Tabulation (BOTTOM-UP APPROACH)
 {
     int n = arr.size();
-    vector<vector<int>> dp(n, vector<int> (k+1, 0));
+    vector<vector<int>> dp(n, vector<int> (k, 0));
     for (int i=0;i<=n-1;i++)
     {
         dp[i][0] = true;

@@ -16,7 +16,7 @@ int main()
     for (int i=0;i<n;i++)
     {
         dp[i][0] = true;
-    }
+    } 
     if (k >= arr[0])
         dp[0][arr[0]] = true;
     for (int ind=1;ind<n;ind++)

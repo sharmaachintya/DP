@@ -5,10 +5,14 @@ using namespace std;
 int solveMem(int ind, int sum, vector<int> &arr, vector<vector<int>> &dp)   // TOP-DOWN APPROACH (Memoization)
 {
     // Base Case
-    if (sum == 0)
-        return 1;
     if (ind == 0)
-        return arr[0] == sum;
+    {
+        if (sum == 0 && arr[0] == 0)
+            return 2;
+        if (sum == 0 || sum == arr[0])
+            return 1;
+        return 0;
+    }
     if (dp[ind][sum] != -1)
         return dp[ind][sum];
     

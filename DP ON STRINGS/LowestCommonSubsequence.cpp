@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int solveMem(int ind1, int ind2, string &s, string &t, vector<vector<int>> &dp)
+int solveMem(int ind1, int ind2, string &s, string &t, vector<vector<int>> &dp)   // TOP DOWN APPROACH (Memoization)
 {
     // Base Case
     if (ind1 < 0 || ind2 < 0)
@@ -15,7 +15,7 @@ int solveMem(int ind1, int ind2, string &s, string &t, vector<vector<int>> &dp)
     return dp[ind1][ind2] = 0 + max(solveMem(ind1 - 1, ind2, s, t, dp), solveMem(ind1, ind2 - 1, s, t, dp));
 }
 
-int solveTab(string &s, string &t)
+int solveTab(string &s, string &t)                                               // BOTTOM UP APPROACH (Tabulation)
 {
     int n = s.size();
     int m = t.size();

@@ -32,5 +32,5 @@ int longestPS(string str)
 int main()
 {
     string str = "bbbab";
-    cout<<longestPS(str)<<endl;
+    cout<<longestPS(str)<<endl; 
 }

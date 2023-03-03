@@ -11,7 +11,7 @@ int solveMem(int ind1, int ind2, string &str1, string &str2, vector<vector<int>>
     if (dp[ind1][ind2] != -1)
         return dp[ind1][ind2];
 
-    if (str1[ind1] == str2[ind2])
+    if (str1[ind1-1] == str2[ind2-1])
         return dp[ind1][ind2] = 1 + solveMem(ind1-1, ind2-1, str1, str2, dp);
     
     return dp[ind1][ind2] = 0 + max(solveMem(ind1-1, ind2, str1, str2, dp), solveMem(ind1, ind2-1, str1, str2, dp));

@@ -11,4 +11,6 @@ DP ON SUBSEQUENCES<br/>
 <br/>
 DP ON STRINGS<br/>
 <br/>
+DP ON STOCKS<br/>
+<br/>
 

@@ -12,7 +12,7 @@ int solve(vector<int> &arr, int n)
         profit = max(profit, cost);
         mini = min(mini, arr[i]);
     }
-    return profit;
+    return profit; 
 }
 
 int main()

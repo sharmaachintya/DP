@@ -18,7 +18,7 @@ int solveMem(int ind, int buy, int cap, vector<int> &prices, int n, vector<vecto
     
     return dp[ind][buy][cap] = profit;
 }
-
+ 
 int main()
 {
     vector<int> prices = {3, 3, 5, 0, 0, 3, 1, 4};

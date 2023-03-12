@@ -10,7 +10,7 @@ int solveMem(int ind, int buy, int cap, vector<int> &prices, int n, vector<vecto
         return 0;
     if (dp[ind][buy][cap] != -1)
         return dp[ind][buy][cap];
-    
+     
     if (buy)
         profit = max(-prices[ind] + solveMem(ind+1, 0, cap, prices, n, dp), solveMem(ind+1, 1, cap, prices, n, dp));
     else

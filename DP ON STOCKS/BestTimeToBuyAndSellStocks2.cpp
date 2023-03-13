@@ -40,7 +40,7 @@ int solveTab(vector<int> &arr, int n)                                           
     return dp[0][1];
 }
 
-int solveOpti(vector<int> &arr, int n)
+int solveOpti(vector<int> &arr, int n)                         // OPTIMIZED APPROACH
 {
     vector<int> ahead(2, 0);
     vector<int> curr(2, 0);

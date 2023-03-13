@@ -13,4 +13,6 @@ DP ON STRINGS<br/>
 <br/>
 DP ON STOCKS<br/>
 <br/>
+DP ON LIS (Longest Increasing Subsequence)<br/>
+<br/>
 

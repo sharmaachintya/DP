@@ -63,7 +63,7 @@ int solveOpti(vector<int> &prices, int n)                       // OPTIMIZED APP
         for (int buy=0;buy<=1;buy++)
         {
             int profit = 0;
-            for (int cap=0;cap<=2;cap++)
+            for (int cap=1;cap<=2;cap++)
             {
                 if (buy)
                     profit = max(-prices[ind] + after[0][cap], after[1][cap]);

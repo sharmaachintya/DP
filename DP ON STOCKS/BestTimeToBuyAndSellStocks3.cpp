@@ -19,7 +19,7 @@ int solveMem(int ind, int buy, int cap, vector<int> &prices, int n, vector<vecto
     return dp[ind][buy][cap] = profit;
 }
 
-int solveTab(vector<int> &prices, int n)
+int solveTab(vector<int> &prices, int n)                 // BOTTOM UP APPROACH (Tabultaion)
 {
     vector<vector<vector<int>>> dp(n+1, vector<vector<int>> (2, vector<int> (3, 0)));
     // Base Cases

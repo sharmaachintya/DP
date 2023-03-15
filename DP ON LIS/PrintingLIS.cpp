@@ -18,7 +18,7 @@ int solveOpti(vector<int> arr, int n)                       // OPTIMIZED APPROAC
     return maxi;
 }
 
-void printLIS(vector<int> arr, int n)                       // OPTIMIZED APPROACH
+void printLIS(vector<int> arr, int n)                       
 {
     vector<int> dp(n, 1), hash(n);
     int maxi = 0;

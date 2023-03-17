@@ -21,7 +21,7 @@ int solveOpti(vector<int> arr, int n)                       // OPTIMIZED APPROAC
 void printLIS(vector<int> arr, int n)                       
 {
     vector<int> dp(n, 1), hash(n);
-    int maxi = 0;
+    int maxi = 1;
     int lastIndex = 0;
     for (int i=0;i<n;i++)
         hash[i] = i;

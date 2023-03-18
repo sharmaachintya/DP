@@ -30,7 +30,7 @@ void printLDS(vector<int> arr, int n)
     lis.push_back(arr[lastIndex]);
     while (hash[lastIndex] != lastIndex)
     {
-        lastIndex = hash[lastIndex];
+        lastIndex = hash[lastIndex]; 
         lis.push_back(arr[lastIndex]);
     }
     reverse(lis.begin(), lis.end());

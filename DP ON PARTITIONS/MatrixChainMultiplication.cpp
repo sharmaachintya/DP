@@ -23,8 +23,8 @@ int solveTab(vector<int> &arr)                                             // BO
 {
     int N = arr.size();
     vector<vector<int>> dp(N, vector<int> (N, 0));
-    for (int i=0;i<=N-1;i++)
-        dp[i][i] = 0;
+    // for (int i=0;i<=N-1;i++)                       // Base Case
+    //     dp[i][i] = 0;
     
     for (int i=N-1;i>=1;i--)
     {

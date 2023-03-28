@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int solveMem(int i, int j, vector<int> &cuts, vector<vector<int>> &dp)
+int solveMem(int i, int j, vector<int> &cuts, vector<vector<int>> &dp)             // TOP DOWN APPROACH (Memoization)
 {
     // Base Case
     if (i > j )
@@ -19,9 +19,26 @@ int solveMem(int i, int j, vector<int> &cuts, vector<vector<int>> &dp)
     return dp[i][j] = mini;
 }
 
-int solveTab(vector<int> cuts)
+int solveTab(vector<int> &cuts, int n)                                         // BOTTOM UP APPROACH (Tabulation)
 {
-
+    int c = cuts.size();
+    vector<vector<int>> dp(c+2, vector<int> (c+2, 0));
+    for (int i=c;i>=1;i--)
+    {
+        for (int j=1;j<=c;j++)
+        {
+            if (i > j)
+                continue;
+            int mini = INT_MAX;
+            for (int ind=i;ind<=j;ind++)
+            {
+                int cost = cuts[j+1] - cuts[i-1] + dp[i][ind-1] + dp[ind+1][j];
+                mini = min(mini, cost);
+            }
+            dp[i][j] = mini;
+        }
+    }
+    return dp[1][c];
 }
 
 int main()
@@ -35,5 +52,5 @@ int main()
     sort(cuts.begin(), cuts.end());
     vector<vector<int>> dp(c+1, vector<int> (c+1, -1));
     cout<<solveMem(1, c, cuts, dp)<<endl;
-    cout<<solveTab(cuts);
+    cout<<solveTab(cuts, n);
 }

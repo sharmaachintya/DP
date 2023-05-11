@@ -17,4 +17,6 @@ DP ON LIS (Longest Increasing Subsequence)<br/>
 <br/>
 DP ON PARTITIONS<br/>
 <br/>
+DP ON RECTANGLES<br/>
+<br/>
 
